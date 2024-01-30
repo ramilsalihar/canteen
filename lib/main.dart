@@ -1,6 +1,8 @@
-import 'package:canteen/presentation/application/application.dart';
+import 'package:canteen/presentation/pages/application/application.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const CanteenApp());
+  runApp(
+    const CanteenApp(),
+  );
 }
