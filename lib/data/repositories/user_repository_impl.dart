@@ -11,14 +11,15 @@ class UserRepositoryImpl implements UserRepository {
   final UserLocalDataSource userLocalDataSource;
   final NetworkInfo networkInfo;
 
-  UserRepositoryImpl(
-      {required this.userRemoteDataSource,
-      required this.userLocalDataSource,
-      required this.networkInfo});
+  UserRepositoryImpl({
+    required this.userRemoteDataSource,
+    required this.userLocalDataSource,
+    required this.networkInfo,
+  });
 
   @override
   Future<Either<Failure, List<ItemModel>>> getAllItems() async {
-    if(await networkInfo.isConnected) {
+    if (await networkInfo.isConnected) {
       try {
         final remoteUser = await userRemoteDataSource.getAllItems();
         userLocalDataSource.itemsToCache(remoteUser);
