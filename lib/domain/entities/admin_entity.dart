@@ -1,18 +1,28 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:equatable/equatable.dart';
 
-part 'admin_entity.freezed.dart';
+class AdminEntity extends Equatable {
+  final String id;
+  final String name;
+  final String surname;
+  final String phoneNumber;
+  final Map<String, Map<String, String>> paymentDetails;
 
-part 'admin_entity.g.dart';
+  const AdminEntity({
+    required this.id,
+    required this.name,
+    required this.surname,
+    required this.phoneNumber,
+    required this.paymentDetails,
+  });
 
-@freezed
-class AdminEntity with _$AdminEntity {
-  const factory AdminEntity({
-   required String id,
-   required String name,
-    required String surname,
-    required String phoneNumber,
-    required Map<String, Map<String, String>> paymentDetails,
-}) = _AdminEntity;
-
-  factory AdminEntity.fromJson(Map<String, Object?> json) => _$AdminEntityFromJson(json);
+  @override
+  List<Object> get props {
+    return [
+      id,
+      name,
+      surname,
+      phoneNumber,
+      paymentDetails,
+    ];
+  }
 }

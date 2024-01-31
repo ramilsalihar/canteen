@@ -1,19 +1,28 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:equatable/equatable.dart';
 
-part 'item_entity.freezed.dart';
+class ItemEntity extends Equatable {
+  final String id;
+  final String nameOfProduct;
+  final String category;
+  final int quantity;
+  final double price;
 
-part 'item_entity.g.dart';
+  const ItemEntity({
+    required this.id,
+    required this.nameOfProduct,
+    required this.category,
+    required this.quantity,
+    required this.price,
+  });
 
-@freezed
-class ItemEntity with _$ItemEntity {
-  const factory ItemEntity({
-    required String id,
-    required String nameOfProduct,
-    required String category,
-    required int quantity,
-    required double price,
-  }) = _ItemEntity;
-
-  factory ItemEntity.fromJson(Map<String, Object?> json) =>
-      _$ItemEntityFromJson(json);
+  @override
+  List<Object> get props {
+    return [
+      id,
+      nameOfProduct,
+      category,
+      quantity,
+      price,
+    ];
+  }
 }
