@@ -41,6 +41,7 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
       jsonItemsList,
     );
 
+    // ignore: void_checks
     return Future.value(jsonItemsList);
   }
 }

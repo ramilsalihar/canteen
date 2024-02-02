@@ -1,4 +1,3 @@
-import 'package:canteen/domain/entities/item_entity.dart';
 import 'package:canteen/data/models/item_model.dart';
 
 abstract class UserRemoteDataSource {
@@ -11,4 +10,4 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
     //TODO: implement getAllItems
     return Future.value([]);
   }
-  }
+}

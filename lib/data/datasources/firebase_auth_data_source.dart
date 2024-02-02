@@ -2,7 +2,7 @@ import 'package:canteen/core/error/auth_error.dart';
 import 'package:canteen/data/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
-abstract class FirebaseAuthService {
+abstract class FirebaseAuthDataSource {
   Future<UserModel> signInWithEmailAndPassword({
     required String email,
     required String password,
@@ -14,8 +14,8 @@ abstract class FirebaseAuthService {
   });
 }
 
-class FirebaseAuthServiceImpl implements FirebaseAuthService {
-  FirebaseAuthServiceImpl({
+class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
+  FirebaseAuthDataSourceImpl({
     required auth.FirebaseAuth authService,
   }) : _firebaseAuth = authService;
 

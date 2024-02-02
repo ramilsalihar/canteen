@@ -22,7 +22,10 @@ dependencies:
   flutter_bloc: ^8.1.3
   get_it: ^7.6.7
   firebase_auth: ^4.17.1
-  firebase_core: ^2.25.1
+  firebase_core: ^2.25.2
+  auto_route: ^7.8.4
+  auto_route_generator: ^7.3.2
+  firebase_database: ^10.4.4
 
 dev_dependencies:
   flutter_test:
@@ -37,9 +40,8 @@ flutter:
 
   uses-material-design: true
 
-  assets:
-   - assets
-   -
+#  assets:
+#    - assets/background
   # fonts:
   #   - family: Schyler
   #     fonts:
