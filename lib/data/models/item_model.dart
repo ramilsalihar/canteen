@@ -19,7 +19,17 @@ class ItemModel extends ItemEntity {
           price: price,
         );
 
-  factory ItemModel.fromJson(Map<String, Object?> json) => _$ItemModelFromJson(json);
+  const ItemModel.empty()
+      : super(
+          id: '',
+          nameOfProduct: '',
+          category: '',
+          quantity: 0,
+          price: 0.0,
+        );
+
+  factory ItemModel.fromJson(Map<String, Object?> json) =>
+      _$ItemModelFromJson(json);
 
   Map<String, Object?> toJson() => _$ItemModelToJson(this);
 }
