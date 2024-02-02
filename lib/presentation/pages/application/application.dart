@@ -1,4 +1,5 @@
 import 'package:canteen/core/routes/app_router.dart';
+import 'package:canteen/core/theme/app_theme.dart';
 import 'package:canteen/data/datasources/firebase_auth_data_source.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,6 +26,8 @@ class CanteenApp extends StatelessWidget {
       child: MaterialApp.router(
         title: 'Canteen App',
         routerConfig: appRouter.config(),
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
       ),
     );
   }

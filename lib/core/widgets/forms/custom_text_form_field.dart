@@ -67,15 +67,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
                     color: Colors.grey,
                   ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: Colors.grey,
-                ),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
               suffixIcon: widget.obscureText == true
                   ? IconButton(
                       onPressed: () {
