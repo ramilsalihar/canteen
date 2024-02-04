@@ -26,7 +26,7 @@ class AppButton extends StatelessWidget {
           horizontal: 30,
         ),
         minimumSize: Size(
-          width ?? 300,
+          width ?? 320,
           height ?? 40,
         ),
         backgroundColor: Theme.of(context).primaryColor,

@@ -22,3 +22,7 @@ class CreateUserWithEmailAndPassword extends AuthEvent {
     required this.password,
   });
 }
+
+class ShowLoginPage extends AuthEvent {}
+
+class ShowSignupPage extends AuthEvent {}

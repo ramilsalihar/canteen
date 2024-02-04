@@ -14,6 +14,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         super(AuthInitial()) {
     on<LoginWithEmailAndPassword>(_mapSignInWithEmailAndPassword);
     on<CreateUserWithEmailAndPassword>(_mapCreateUserWithEmailAndPassword);
+    on<ShowLoginPage>((event, emit) {
+      emit(LoginState());
+    });
+    on<ShowSignupPage>((event, emit) {
+      emit(SignupState());
+    });
   }
 
   final FirebaseAuthDataSource _authService;

@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
-    required this.title,
     required this.controller,
+    required this.icon,
     this.hintText,
-    this.onChanged,
     this.readOnly,
     this.keyboardType,
     this.validator,
@@ -15,16 +14,15 @@ class CustomTextFormField extends StatefulWidget {
     this.width,
   });
 
-  final String title;
   final TextEditingController controller;
   final String? hintText;
-  final Function(String)? onChanged;
   final bool? readOnly;
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final bool? obscureText;
   final double? width;
   final double? height;
+  final Icon icon;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -44,29 +42,18 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            bottom: 10,
-            left: 7.5,
-          ),
-          child: Text(
-            widget.title,
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
         SizedBox(
-          width: widget.width ?? 300,
+          width: widget.width ?? 320,
           height: widget.height ?? 60,
           child: TextFormField(
             decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 15,
-                vertical: 10,
-              ),
+              contentPadding: const EdgeInsets.symmetric(vertical: 15),
               hintText: widget.hintText ?? '',
               hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
                     color: Colors.grey,
+                    fontSize: 14,
                   ),
+              prefixIcon: widget.icon,
               suffixIcon: widget.obscureText == true
                   ? IconButton(
                       onPressed: () {
@@ -82,10 +69,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                       ),
                     )
                   : null,
+              errorMaxLines: 2,
+              isCollapsed: true,
             ),
             obscureText: hideText!,
             controller: widget.controller,
-            onChanged: widget.onChanged ?? (value) {},
             readOnly: widget.readOnly ?? false,
             keyboardType: widget.keyboardType ?? TextInputType.text,
             validator: widget.validator,
