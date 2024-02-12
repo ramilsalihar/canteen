@@ -1,4 +1,4 @@
-import 'package:canteen/locator_service.dart' as di;
+import 'package:canteen/core/di/service_locator.dart' as di;
 import 'package:canteen/presentation/pages/application/application.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

@@ -1,9 +1,12 @@
 import 'package:canteen/core/validation/form_validation.dart';
 import 'package:canteen/core/widgets/buttons/app_button.dart';
+import 'package:canteen/core/widgets/forms/custom_drop_down_button.dart';
 import 'package:canteen/core/widgets/forms/input_field.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 class SignupFields extends StatelessWidget {
   const SignupFields({super.key});
@@ -15,6 +18,8 @@ class SignupFields extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
     final TextEditingController repeatPassword = TextEditingController();
     final TextEditingController phoneController = TextEditingController();
+
+    final firebaseData = GetIt.instance.get<FirebaseDatabase>().ref("users/");
 
     return Form(
       key: loginKey,
@@ -29,9 +34,9 @@ class SignupFields extends StatelessWidget {
           InputFields.email(controller: emailController),
           const SizedBox(height: 10),
           InputFields.phoneNumber(controller: phoneController),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           InputFields.password(controller: passwordController),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           InputFields.password(
             controller: repeatPassword,
             validator: (_) => FormValidation.validatePasswordMatch(
@@ -39,19 +44,29 @@ class SignupFields extends StatelessWidget {
               passwordController.text,
             ),
           ),
+          const SizedBox(height: 10),
+          const CustomDropDownButton(
+            items: [
+              'one',
+              'two',
+              'three',
+            ],
+            hint: 'Выберите роль',
+          ),
           const SizedBox(height: 20),
           AppButton(
               title: 'Зарегистрироваться',
-              onPressed: () {
+              onPressed: () async {
                 if (loginKey.currentState!.validate()) {
                   context.read<AuthBloc>().add(
-                        CreateUserWithEmailAndPassword(
+                        SignupButtonPressed(
                           email: emailController.text,
                           password: passwordController.text,
+                          phone: phoneController.text,
                         ),
                       );
                 }
-              })
+              }),
         ],
       ),
     );

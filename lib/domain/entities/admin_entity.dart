@@ -5,14 +5,18 @@ class AdminEntity extends Equatable {
   final String name;
   final String surname;
   final String phoneNumber;
-  final Map<String, Map<String, String>> paymentDetails;
+  final String email;
+  final Map<String, dynamic> details;
+  final Map<String, dynamic> schedule;
 
   const AdminEntity({
     required this.id,
     required this.name,
     required this.surname,
     required this.phoneNumber,
-    required this.paymentDetails,
+    required this.email,
+    required this.details,
+    required this.schedule,
   });
 
   @override
@@ -22,7 +26,9 @@ class AdminEntity extends Equatable {
       name,
       surname,
       phoneNumber,
-      paymentDetails,
+      email,
+      details,
+      schedule,
     ];
   }
 }

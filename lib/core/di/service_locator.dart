@@ -3,8 +3,9 @@ import 'package:canteen/data/datasources/user_remote_data_source.dart';
 import 'package:canteen/data/repositories/user_repository_impl.dart';
 import 'package:canteen/domain/repositories/user_repository.dart';
 import 'package:canteen/domain/usecases/user_cases/get_all_items.dart';
-import 'package:get_it/get_it.dart';
 import 'package:canteen/presentation/bloc/get_items/get_items_bloc.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 final sl = GetIt.instance;
@@ -35,4 +36,6 @@ init() {
   // External
   sl.registerLazySingleton(() => InternetConnectionChecker());
 
+  // Firebase
+  var ref = sl.registerSingleton<FirebaseDatabase>(FirebaseDatabase.instance);
 }

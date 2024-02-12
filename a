@@ -1,0 +1,95 @@
+[33mcommit 0ea588caa921eb428b0b5e88234550d64bffc2b0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Reflog: HEAD@{0} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: minor changes
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Sun Feb 4 11:25:10 2024 +0600
+
+    minor changes
+
+[33mcommit 6ed45d8fe51b09d690e5242693ab8367a4cc9bfb[m[33m ([m[1;31morigin/main[m[33m)[m
+Reflog: HEAD@{1} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding theme
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Fri Feb 2 23:42:31 2024 +0600
+
+    adding theme
+
+[33mcommit 15ca7877ae3016bd52f243556b115480fcc37b9c[m
+Reflog: HEAD@{2} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding login page
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Fri Feb 2 23:24:35 2024 +0600
+
+    adding login page
+
+[33mcommit 17cbb4bf7ac35d6c9ef3dd1251337d0f0f5344f4[m
+Reflog: HEAD@{3} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding firebase_auth service
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Fri Feb 2 11:30:44 2024 +0600
+
+    adding firebase_auth service
+
+[33mcommit 4148a8122eada498fa86adcaaea1e1dc4f1b872c[m
+Reflog: HEAD@{4} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding dependency injection
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Wed Jan 31 22:49:02 2024 +0600
+
+    adding dependency injection
+
+[33mcommit 978ffe01f8dcba7fa28ee7337b223464deb5943b[m
+Reflog: HEAD@{5} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding bloc
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Wed Jan 31 22:05:08 2024 +0600
+
+    adding bloc
+
+[33mcommit 8a0fb76992f3f66cdc48dbe047d7c9509fe01da4[m
+Reflog: HEAD@{6} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding data layer
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Wed Jan 31 21:40:24 2024 +0600
+
+    adding data layer
+
+[33mcommit ea91799198c45585b17c6790f996cc065efee1ca[m
+Reflog: HEAD@{7} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding login pages
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Wed Jan 31 15:14:51 2024 +0600
+
+    adding login pages
+
+[33mcommit c5b237bdf8df505b812daca3fb39bc2a73c8fe9d[m
+Reflog: HEAD@{8} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: adding domain layer
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Tue Jan 30 21:22:37 2024 +0600
+
+    adding domain layer
+
+[33mcommit d032e83ab73ef5897241318d560b884b768705ed[m
+Reflog: HEAD@{9} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit: build architecture
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Fri Jan 26 19:44:18 2024 +0600
+
+    build architecture
+
+[33mcommit 8e6240ecef7c81d98d0238a086d54082bb807df9[m
+Reflog: HEAD@{10} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: Branch: renamed refs/heads/master to refs/heads/main
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Thu Jan 25 14:28:44 2024 +0600
+
+    init
+
+[33mcommit 8e6240ecef7c81d98d0238a086d54082bb807df9[m
+Reflog: HEAD@{12} (Rambo <ramilsalihar@gmail.com>)
+Reflog message: commit (initial): init
+Author: Rambo <ramilsalihar@gmail.com>
+Date:   Thu Jan 25 14:28:44 2024 +0600
+
+    init

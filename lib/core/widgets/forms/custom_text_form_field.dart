@@ -39,47 +39,40 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          width: widget.width ?? 320,
-          height: widget.height ?? 60,
-          child: TextFormField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-              hintText: widget.hintText ?? '',
-              hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
+    return SizedBox(
+      width: widget.width ?? 320,
+      height: widget.height ?? 60,
+      child: TextFormField(
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 15),
+          hintText: widget.hintText ?? '',
+          hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                color: Colors.grey,
+                fontSize: 14,
+              ),
+          prefixIcon: widget.icon,
+          suffixIcon: widget.obscureText == true
+              ? IconButton(
+                  onPressed: () {
+                    setState(() {
+                      hideText = !hideText!;
+                    });
+                  },
+                  icon: Icon(
+                    hideText == true ? Icons.visibility : Icons.visibility_off,
                     color: Colors.grey,
-                    fontSize: 14,
                   ),
-              prefixIcon: widget.icon,
-              suffixIcon: widget.obscureText == true
-                  ? IconButton(
-                      onPressed: () {
-                        setState(() {
-                          hideText = !hideText!;
-                        });
-                      },
-                      icon: Icon(
-                        hideText == true
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: Colors.grey,
-                      ),
-                    )
-                  : null,
-              errorMaxLines: 2,
-              isCollapsed: true,
-            ),
-            obscureText: hideText!,
-            controller: widget.controller,
-            readOnly: widget.readOnly ?? false,
-            keyboardType: widget.keyboardType ?? TextInputType.text,
-            validator: widget.validator,
-          ),
+                )
+              : null,
+          errorMaxLines: 2,
+          isCollapsed: true,
         ),
-      ],
+        obscureText: hideText!,
+        controller: widget.controller,
+        readOnly: widget.readOnly ?? false,
+        keyboardType: widget.keyboardType ?? TextInputType.text,
+        validator: widget.validator,
+      ),
     );
   }
 }

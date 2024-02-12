@@ -23,6 +23,28 @@ class CreateUserWithEmailAndPassword extends AuthEvent {
   });
 }
 
+class SignupButtonPressed extends AuthEvent {
+  final String email;
+  final String password;
+  final String phone;
+
+  SignupButtonPressed({
+    required this.email,
+    required this.password,
+    required this.phone,
+  });
+}
+
+class LoginButtonPressed extends AuthEvent {
+  final String email;
+  final String password;
+
+  LoginButtonPressed({
+    required this.email,
+    required this.password,
+  });
+}
+
 class ShowLoginPage extends AuthEvent {}
 
 class ShowSignupPage extends AuthEvent {}
