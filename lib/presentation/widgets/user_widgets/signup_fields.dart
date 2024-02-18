@@ -1,8 +1,7 @@
 import 'package:canteen/core/validation/form_validation.dart';
-import 'package:canteen/core/widgets/buttons/app_button.dart';
-import 'package:canteen/core/widgets/forms/custom_drop_down_button.dart';
-import 'package:canteen/core/widgets/forms/input_field.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:canteen/presentation/widgets/buttons/app_button.dart';
+import 'package:canteen/presentation/widgets/forms/input_field.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,14 +44,14 @@ class SignupFields extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const CustomDropDownButton(
-            items: [
-              'one',
-              'two',
-              'three',
-            ],
-            hint: 'Выберите роль',
-          ),
+          // const CustomDropDownButton(
+          //   items: [
+          //     'one',
+          //     'two',
+          //     'three',
+          //   ],
+          //   hint: 'Выберите роль',
+          // ),
           const SizedBox(height: 20),
           AppButton(
               title: 'Зарегистрироваться',

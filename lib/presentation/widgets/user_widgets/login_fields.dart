@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:canteen/core/routes/app_router.gr.dart';
-import 'package:canteen/core/widgets/buttons/app_button.dart';
-import 'package:canteen/core/widgets/forms/input_field.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:canteen/presentation/widgets/buttons/app_button.dart';
+import 'package:canteen/presentation/widgets/forms/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,12 +39,11 @@ class _LoginFieldState extends State<LoginField> {
             onPressed: () {
               if (loginKey.currentState!.validate()) {
                 context.read<AuthBloc>().add(
-                      CreateUserWithEmailAndPassword(
+                      LoginButtonPressed(
                         email: _emailController.text,
                         password: _passwordController.text,
                       ),
                     );
-                context.router.replace(const UserHomeRoute());
               }
             },
           ),

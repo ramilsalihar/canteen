@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:canteen/core/widgets/layout/app_bottom_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:canteen/presentation/widgets/layout/app_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -9,7 +8,6 @@ class UserHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(FirebaseAuth.instance.currentUser!.uid);
     return Scaffold(
       appBar: AppBar(
         title: Text('User Home Page'),
@@ -22,7 +20,10 @@ class UserHomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const AppBottomBar(),
+      bottomNavigationBar: AppBottomBar(
+        selectedIndex: 0,
+        onItemTapped: (_) {},
+      ),
     );
   }
 }

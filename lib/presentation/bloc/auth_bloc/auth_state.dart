@@ -7,11 +7,19 @@ class AuthInitial extends AuthState {}
 
 class AuthLoading extends AuthState {}
 
-class AuthSuccessState extends AuthState {
-  final User user;
+class AuthUserSuccessState extends AuthState {
+  final UserModel user;
 
-  AuthSuccessState({required this.user});
+  AuthUserSuccessState({required this.user});
 }
+
+class AuthAdminSuccessState extends AuthState {
+  final AdminModel user;
+
+  AuthAdminSuccessState({required this.user});
+}
+
+class AuthLogoutState extends AuthState {}
 
 class AuthErrorState extends AuthState {
   final String message;

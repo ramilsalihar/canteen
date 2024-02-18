@@ -14,7 +14,8 @@ void main() async {
 
   // Initialize
   await di.init();
-  await Firebase.initializeApp();
 
-  runApp(const CanteenApp());
+  runApp(
+    const CanteenApp(),
+  );
 }

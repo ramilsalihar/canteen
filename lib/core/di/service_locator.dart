@@ -2,7 +2,7 @@ import 'package:canteen/core/platform/network_info.dart';
 import 'package:canteen/data/datasources/user_remote_data_source.dart';
 import 'package:canteen/data/repositories/user_repository_impl.dart';
 import 'package:canteen/domain/repositories/user_repository.dart';
-import 'package:canteen/domain/usecases/user_cases/get_all_items.dart';
+import 'package:canteen/domain/usecases/user_cases/view_content_usecase.dart';
 import 'package:canteen/presentation/bloc/get_items/get_items_bloc.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get_it/get_it.dart';
@@ -12,10 +12,10 @@ final sl = GetIt.instance;
 
 init() {
   // Bloc & Cubit
-  sl.registerFactory(() => GetItemsBloc(getAllItems: sl()));
+  sl.registerFactory(() => GetItemsBloc(viewContentUseCase: sl()));
 
   // UseCases
-  sl.registerLazySingleton(() => GetAllItems(sl()));
+  sl.registerLazySingleton(() => ViewContentUseCase(sl()));
 
   // Repository
   sl.registerLazySingleton<UserRepository>(() => UserRepositoryImpl(

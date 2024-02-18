@@ -28,6 +28,7 @@ dependencies:
   firebase_database: ^10.4.4
   google_fonts: ^6.1.0
   cloud_firestore: ^4.15.4
+  lite_rolling_switch: ^1.0.1
 
 dev_dependencies:
   flutter_test:

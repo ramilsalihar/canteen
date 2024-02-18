@@ -10,4 +10,6 @@ class Dimens {
   final double headlineMedium = 16;
 
   final double headlineSmall = 12;
+
+  final double borderRadius = 30;
 }

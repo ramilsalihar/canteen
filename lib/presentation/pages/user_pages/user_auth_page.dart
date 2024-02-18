@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:canteen/core/routes/app_router.gr.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:canteen/presentation/widgets/user_widgets/login_fields.dart';
 import 'package:canteen/presentation/widgets/user_widgets/signup_fields.dart';
@@ -20,7 +21,15 @@ class _UserAuthPageState extends State<UserAuthPage> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
-          child: BlocBuilder<AuthBloc, AuthState>(
+          child: BlocConsumer<AuthBloc, AuthState>(
+            listener: (context, state) {
+              print('Listening to state: $state');
+              if (state is AuthUserSuccessState) {
+                context.router.replace(const UserHomeRoute());
+              } else if (state is AuthAdminSuccessState) {
+                context.router.replace(const AdminHomeRoute());
+              }
+            },
             builder: (context, state) {
               bool isLogin = state is LoginState;
               String title = isLogin ? 'Вход' : 'Регистрация';
