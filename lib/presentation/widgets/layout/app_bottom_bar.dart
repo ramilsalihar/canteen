@@ -41,7 +41,7 @@ class AppBottomBar extends StatelessWidget {
           shape: BoxShape.circle,
           color: selectedIndex == index ? Colors.blue : Colors.transparent,
         ),
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(5.0),
         child: Icon(
           icon,
         ),

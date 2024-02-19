@@ -5,24 +5,25 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
   const AppTopBar({
     super.key,
     required this.scaffoldKey,
-    required this.title,
+    this.title,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
-  final String title;
+  final String? title;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
+    bool isTitle = title != null;
     return AppBar(
       backgroundColor: Colors.transparent,
       leading: IconButton(
         icon: const Icon(Icons.person),
         onPressed: () => scaffoldKey.currentState!.openDrawer(),
       ),
-      title: AppSwipeButton(),
+      title: isTitle ? Text(title!) : const AppSwipeButton(),
       centerTitle: true,
       actions: [
         IconButton(

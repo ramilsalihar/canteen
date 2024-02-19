@@ -12,4 +12,6 @@ class Dimens {
   final double headlineSmall = 12;
 
   final double borderRadius = 30;
+
+  final double iconSize = 40;
 }

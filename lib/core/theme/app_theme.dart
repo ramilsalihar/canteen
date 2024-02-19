@@ -19,6 +19,27 @@ class AppTheme {
       colors: _lightColors,
       dimens: dimens,
     ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconSize: MaterialStateProperty.all(dimens.iconSize),
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: _lightColors.grey,
+      unselectedItemColor: _lightColors.white,
+      unselectedLabelStyle: TextStyle(
+        color: _lightColors.white,
+        fontSize: dimens.headlineSmall,
+      ),
+      selectedIconTheme: IconThemeData(
+        color: _lightColors.white,
+        size: dimens.iconSize,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: _lightColors.white,
+        size: dimens.iconSize,
+      ),
+    ),
   );
 
   static const _darkColors = appColorsDark;

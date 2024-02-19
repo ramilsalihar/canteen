@@ -18,6 +18,8 @@ abstract class AppColors {
 
   Color get black;
 
+  Color get grey;
+
   static AppColors of(BuildContext context) {
     switch (Theme.of(context).brightness) {
       case Brightness.light:

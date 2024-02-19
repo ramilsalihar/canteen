@@ -19,4 +19,7 @@ class AppColorsLight extends AppColors {
 
   @override
   Color get black => const Color(0xff000000);
+
+  @override
+  Color get grey => const Color(0xffA9A9A9);
 }
