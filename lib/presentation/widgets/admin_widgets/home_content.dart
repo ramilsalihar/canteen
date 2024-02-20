@@ -18,8 +18,8 @@ class HomeContent extends StatelessWidget {
             style: theme.textTheme.displayMedium,
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             top: 10,
             bottom: 10,
           ),
@@ -27,14 +27,28 @@ class HomeContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AppCard.vertical(
-                title: 'Card 1',
-                child: const Text('Card 1'),
-                footer: 'Footer 1',
+                title: 'Payment Details',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Visa:'),
+                    Text(
+                      '1234 5678 9012 3456',
+                      style: theme.textTheme.headlineSmall,
+                    ),
+                    const Text('Master Card'),
+                    Text('1234 5678 9012 3456',
+                        style: theme.textTheme.headlineSmall),
+                  ],
+                ),
               ),
               AppCard.vertical(
-                title: 'Card 2',
-                child: const Text('Card 2'),
-                footer: 'Footer 2',
+                title: 'Schedule',
+                footer: Text(
+                  'Last Updated: 12/12/2020',
+                  style: theme.textTheme.displaySmall,
+                ),
+                child: const Text('No Schedule'),
               ),
             ],
           ),
@@ -46,7 +60,7 @@ class HomeContent extends StatelessWidget {
             style: theme.textTheme.displayMedium,
           ),
         ),
-        HorizontalScrollView(),
+        const HorizontalScrollView(),
       ],
     );
   }

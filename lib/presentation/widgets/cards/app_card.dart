@@ -8,7 +8,7 @@ class AppCard extends StatelessWidget {
     this.height = 200,
     required this.title,
     required this.child,
-    required this.footer,
+    this.footer,
   });
 
   const AppCard.horizontal({
@@ -17,21 +17,21 @@ class AppCard extends StatelessWidget {
     this.height = 300,
     required this.title,
     required this.child,
-    required this.footer,
+    this.footer,
   });
 
   const AppCard.vertical({
     super.key,
-    this.width = 150,
+    this.width = 170,
     this.height = 200,
     required this.title,
     required this.child,
-    required this.footer,
+    this.footer,
   });
 
   final String title;
   final Widget child;
-  final String footer;
+  final Widget? footer;
   final double width;
   final double height;
 
@@ -48,30 +48,29 @@ class AppCard extends StatelessWidget {
         height: height,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: theme.primaryColor,
           borderRadius: BorderRadius.circular(context.dimens.borderRadius),
         ),
         child: Stack(
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: theme.textTheme.displayMedium,
                 ),
-                Expanded(
-                  child: child,
-                ),
+                const SizedBox(height: 10),
+                child,
               ],
             ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Text(
-                footer,
-                style: theme.textTheme.headlineMedium,
-              ),
-            ),
+            footer != null
+                ? Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: footer!,
+                  )
+                : const SizedBox(),
           ],
         ),
       ),
