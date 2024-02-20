@@ -20,7 +20,6 @@ class CustomerCard extends StatelessWidget {
       ),
       title: Text(name),
       subtitle: Text('$customerType - $balance'),
-      trailing: const Icon(Icons.arrow_forward_ios),
     );
   }
 }

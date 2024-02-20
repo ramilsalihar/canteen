@@ -1,3 +1,4 @@
+import 'package:canteen/presentation/widgets/layout/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class QrCodeContent extends StatelessWidget {
@@ -5,6 +6,6 @@ class QrCodeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ProfilePage();
   }
 }
