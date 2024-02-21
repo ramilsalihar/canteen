@@ -12,6 +12,12 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: _lightColors.primaryColor,
+    colorScheme: ColorScheme.light(
+      primary: _lightColors.primaryColor,
+      secondary: _lightColors.secondaryColor,
+      tertiary: _lightColors.accentColor,
+    ),
+    cardColor: _lightColors.grey,
     fontFamily: GoogleFonts.montserrat(
       fontWeight: FontWeight.w600,
     ).fontFamily,
@@ -21,22 +27,18 @@ class AppTheme {
     ),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(
+        iconColor: MaterialStateProperty.all(_lightColors.primaryColor),
         iconSize: MaterialStateProperty.all(dimens.iconSize),
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: _lightColors.grey,
-      unselectedItemColor: _lightColors.white,
-      unselectedLabelStyle: TextStyle(
-        color: _lightColors.white,
-        fontSize: dimens.headlineSmall,
-      ),
       selectedIconTheme: IconThemeData(
         color: _lightColors.white,
         size: dimens.iconSize,
       ),
       unselectedIconTheme: IconThemeData(
-        color: _lightColors.white,
+        color: _lightColors.primaryColor,
         size: dimens.iconSize,
       ),
     ),

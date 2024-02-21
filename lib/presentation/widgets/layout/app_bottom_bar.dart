@@ -13,6 +13,7 @@ class AppBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return ClipRRect(
       borderRadius: BorderRadius.all(
         Radius.circular(
@@ -24,9 +25,21 @@ class AppBottomBar extends StatelessWidget {
         showUnselectedLabels: false,
         elevation: 10,
         items: [
-          customNavBarItem(Icons.people, 0),
-          customNavBarItem(Icons.home_rounded, 1),
-          customNavBarItem(Icons.qr_code_scanner_outlined, 2),
+          customNavBarItem(
+            icon: Icons.people,
+            index: 0,
+            activeColor: theme.primaryColor,
+          ),
+          customNavBarItem(
+            icon: Icons.home_rounded,
+            index: 1,
+            activeColor: theme.primaryColor,
+          ),
+          customNavBarItem(
+            icon: Icons.qr_code_scanner_outlined,
+            index: 2,
+            activeColor: theme.primaryColor,
+          ),
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,
@@ -34,12 +47,16 @@ class AppBottomBar extends StatelessWidget {
     );
   }
 
-  BottomNavigationBarItem customNavBarItem(IconData icon, int index) {
+  BottomNavigationBarItem customNavBarItem({
+    required IconData icon,
+    required int index,
+    required Color activeColor,
+  }) {
     return BottomNavigationBarItem(
       icon: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: selectedIndex == index ? Colors.blue : Colors.transparent,
+          color: selectedIndex == index ? activeColor : Colors.transparent,
         ),
         padding: const EdgeInsets.all(5.0),
         child: Icon(
