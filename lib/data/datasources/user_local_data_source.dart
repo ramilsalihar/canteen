@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:canteen/core/error/exception.dart';
-import 'package:canteen/data/models/item_model.dart';
+import 'package:canteen/data/models/product_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class UserLocalDataSource {
-  Future<List<ItemModel>> getItemsFromCache();
+  Future<List<ProductModel>> getItemsFromCache();
 
-  Future<void> itemsToCache(List<ItemModel> items);
+  Future<void> itemsToCache(List<ProductModel> items);
 }
 
 const cachedItems = 'CACHED_ITEMS';
@@ -18,12 +18,12 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
   UserLocalDataSourceImpl({required this.sharedPreferences});
 
   @override
-  Future<List<ItemModel>> getItemsFromCache() {
+  Future<List<ProductModel>> getItemsFromCache() {
     final jsonItemsList = sharedPreferences.getStringList(cachedItems);
     if (jsonItemsList != null) {
       return Future.value(jsonItemsList
           .map(
-            (jsonItem) => ItemModel.fromJson(jsonDecode(jsonItem)),
+            (jsonItem) => ProductModel.fromJson(jsonDecode(jsonItem)),
           )
           .toList());
     } else {
@@ -32,7 +32,7 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
   }
 
   @override
-  Future<void> itemsToCache(List<ItemModel> items) {
+  Future<void> itemsToCache(List<ProductModel> items) {
     final List<String> jsonItemsList =
         items.map((item) => jsonEncode(item.toJson())).toList();
 

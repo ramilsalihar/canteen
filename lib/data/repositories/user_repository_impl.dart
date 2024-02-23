@@ -2,7 +2,7 @@ import 'package:canteen/core/error/failure.dart';
 import 'package:canteen/core/platform/network_info.dart';
 import 'package:canteen/data/datasources/user_local_data_source.dart';
 import 'package:canteen/data/datasources/user_remote_data_source.dart';
-import 'package:canteen/data/models/item_model.dart';
+import 'package:canteen/data/models/product_model.dart';
 import 'package:canteen/domain/repositories/user_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
@@ -20,7 +20,7 @@ class UserRepositoryImpl implements UserRepository {
   });
 
   @override
-  Future<Either<Failure, List<ItemModel>>> getAllItems() async {
+  Future<Either<Failure, List<ProductModel>>> getAllItems() async {
     if (await networkInfo.isConnected) {
       try {
         final remoteUser = await userRemoteDataSource.getAllItems();

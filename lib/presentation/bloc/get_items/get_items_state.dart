@@ -1,4 +1,4 @@
-import 'package:canteen/domain/entities/item_entity.dart';
+import 'package:canteen/domain/entities/product_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class GetItemsState extends Equatable {
@@ -13,7 +13,7 @@ class GetItemsInitial extends GetItemsState {}
 class GetItemsFetchingState extends GetItemsState {}
 
 class GetItemsFetchingSuccessState extends GetItemsState {
-  final List<ItemEntity> items;
+  final List<ProductEntity> items;
 
   const GetItemsFetchingSuccessState({required this.items});
 

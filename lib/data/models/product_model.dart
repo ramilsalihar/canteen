@@ -1,11 +1,11 @@
-import 'package:canteen/domain/entities/item_entity.dart';
+import 'package:canteen/domain/entities/product_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'item_model.g.dart';
+part 'product_model.g.dart';
 
 @JsonSerializable()
-class ItemModel extends ItemEntity {
-  const ItemModel({
+class ProductModel extends ProductEntity {
+  const ProductModel({
     required String id,
     required String nameOfProduct,
     required String category,
@@ -19,7 +19,7 @@ class ItemModel extends ItemEntity {
           price: price,
         );
 
-  const ItemModel.empty()
+  const ProductModel.empty()
       : super(
           id: '',
           nameOfProduct: '',
@@ -28,8 +28,8 @@ class ItemModel extends ItemEntity {
           price: 0.0,
         );
 
-  factory ItemModel.fromJson(Map<String, Object?> json) =>
-      _$ItemModelFromJson(json);
+  factory ProductModel.fromJson(Map<String, Object?> json) =>
+      _$ProductModelFromJson(json);
 
-  Map<String, Object?> toJson() => _$ItemModelToJson(this);
+  Map<String, Object?> toJson() => _$ProductModelToJson(this);
 }
