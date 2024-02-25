@@ -10,28 +10,31 @@ class UserModel extends UserEntity {
     required String name,
     required String surname,
     required String email,
-    required String classYear,
+    required String userType,
     required String phoneNumber,
     required double balance,
+    required List<dynamic> purchases,
   }) : super(
           id: id,
           name: name,
           surname: surname,
           email: email,
-          classYear: classYear,
+          userType: userType,
           phoneNumber: phoneNumber,
           balance: balance,
+          purchases: purchases,
         );
 
-  const UserModel.empty()
+  UserModel.empty()
       : super(
           id: '',
           name: '',
           surname: '',
           email: '',
-          classYear: '',
+          userType: '',
           phoneNumber: '',
           balance: 0.0,
+          purchases: [],
         );
 
   factory UserModel.fromJson(Map<String, Object?> json) =>
