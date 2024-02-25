@@ -1,11 +1,10 @@
 import 'package:canteen/core/validation/form_validation.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:canteen/presentation/widgets/buttons/app_button.dart';
+import 'package:canteen/presentation/widgets/forms/custom_drop_down_button.dart';
 import 'package:canteen/presentation/widgets/forms/input_field.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 
 class SignupFields extends StatelessWidget {
   const SignupFields({super.key});
@@ -17,8 +16,7 @@ class SignupFields extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
     final TextEditingController repeatPassword = TextEditingController();
     final TextEditingController phoneController = TextEditingController();
-
-    final firebaseData = GetIt.instance.get<FirebaseDatabase>().ref("users/");
+    final TextEditingController roleController = TextEditingController();
 
     return Form(
       key: loginKey,
@@ -44,14 +42,15 @@ class SignupFields extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          // const CustomDropDownButton(
-          //   items: [
-          //     'one',
-          //     'two',
-          //     'three',
-          //   ],
-          //   hint: 'Выберите роль',
-          // ),
+          CustomDropDownButton(
+            controller: roleController,
+            items: const [
+              'Student',
+              'Faculty',
+              'Staff',
+            ],
+            hint: 'Выберите роль',
+          ),
           const SizedBox(height: 20),
           AppButton(
               title: 'Зарегистрироваться',
@@ -62,6 +61,7 @@ class SignupFields extends StatelessWidget {
                           email: emailController.text,
                           password: passwordController.text,
                           phone: phoneController.text,
+                          role: roleController.text,
                         ),
                       );
                 }

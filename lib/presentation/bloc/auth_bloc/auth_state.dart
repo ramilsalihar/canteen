@@ -27,6 +27,12 @@ class AuthErrorState extends AuthState {
   AuthErrorState({required this.message});
 }
 
+class AuthUserRolesState extends AuthState {
+  final bool isAdmin;
+
+  AuthUserRolesState({required this.isAdmin});
+}
+
 class LoginState extends AuthState {}
 
 class SignupState extends AuthState {}

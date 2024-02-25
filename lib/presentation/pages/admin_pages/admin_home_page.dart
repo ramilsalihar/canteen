@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:canteen/presentation/widgets/admin_widgets/home_content.dart';
 import 'package:canteen/presentation/widgets/admin_widgets/people_list_content.dart';
 import 'package:canteen/presentation/widgets/admin_widgets/qr_code_content.dart';
@@ -6,6 +7,7 @@ import 'package:canteen/presentation/widgets/layout/app_bottom_bar.dart';
 import 'package:canteen/presentation/widgets/layout/app_drawer.dart';
 import 'package:canteen/presentation/widgets/layout/app_top_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -22,6 +24,10 @@ class _AdminHomePageState extends State<AdminHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isAdmin =
+        BlocProvider.of<AuthBloc>(context).state is AuthAdminSuccessState;
+
+    print('isAdmin: $isAdmin');
     final theme = Theme.of(context);
     return Scaffold(
       key: scaffoldKey,

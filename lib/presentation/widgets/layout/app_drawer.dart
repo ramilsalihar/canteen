@@ -1,5 +1,9 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:canteen/core/routes/app_router.gr.dart';
+import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:canteen/presentation/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -85,7 +89,12 @@ class _AppDrawerState extends State<AppDrawer> {
             ),
             child: AppButton(
               title: 'Logout',
-              onPressed: () {},
+              onPressed: () {
+                BlocProvider.of<AuthBloc>(context).add(
+                  LogoutButtonPressed(),
+                );
+                context.replaceRoute(const UserAuthRoute());
+              },
             ),
           )
         ],

@@ -14,6 +14,8 @@ abstract class FirebaseAuthDataSource {
   //   required String email,
   //   required String password,
   // });
+
+  Future<dynamic> logout();
 }
 
 class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
@@ -86,5 +88,10 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
         balance: userDoc['balance'],
       );
     }
+  }
+
+  @override
+  Future<dynamic> logout() async {
+    await _firebaseAuth.signOut();
   }
 }
