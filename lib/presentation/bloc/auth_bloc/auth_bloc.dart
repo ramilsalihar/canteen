@@ -92,6 +92,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  bool get isAdmin => state is AuthAdminSuccessState;
+
   Future<void> handleLogout(
     LogoutButtonPressed event,
     Emitter<AuthState> emit,

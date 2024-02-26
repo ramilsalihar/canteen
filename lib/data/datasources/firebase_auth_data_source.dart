@@ -102,7 +102,7 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
         surname: adminDoc['surname'],
         email: adminDoc['email'],
         phoneNumber: adminDoc['phoneNumber'],
-        details: adminDoc['details'],
+        paymentDetails: adminDoc['paymentDetails'],
         schedule: adminDoc['schedule'],
       );
     } else {

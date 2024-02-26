@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class QrCodeContent extends StatelessWidget {
-  const QrCodeContent({super.key});
+class AdminQrCode extends StatelessWidget {
+  const AdminQrCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Admin QR Code'),
+    );
   }
 }

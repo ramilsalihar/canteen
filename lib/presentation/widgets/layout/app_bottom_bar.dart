@@ -1,5 +1,7 @@
 import 'package:canteen/core/extensions/context_extension.dart';
+import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppBottomBar extends StatelessWidget {
   const AppBottomBar({
@@ -13,6 +15,7 @@ class AppBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isAdmin = context.read<AuthBloc>().isAdmin;
     final theme = Theme.of(context);
     return ClipRRect(
       borderRadius: BorderRadius.all(
@@ -26,7 +29,7 @@ class AppBottomBar extends StatelessWidget {
         elevation: 10,
         items: [
           customNavBarItem(
-            icon: Icons.people,
+            icon: isAdmin ? Icons.people : Icons.store_mall_directory_rounded,
             index: 0,
             activeColor: theme.primaryColor,
           ),
@@ -59,9 +62,7 @@ class AppBottomBar extends StatelessWidget {
           color: selectedIndex == index ? activeColor : Colors.transparent,
         ),
         padding: const EdgeInsets.all(5.0),
-        child: Icon(
-          icon,
-        ),
+        child: Icon(icon),
       ),
       label: '',
     );

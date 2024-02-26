@@ -2,8 +2,8 @@ import 'package:canteen/presentation/widgets/cards/app_card.dart';
 import 'package:canteen/presentation/widgets/layout/horizontal_scroll_view.dart';
 import 'package:flutter/material.dart';
 
-class HomeContent extends StatelessWidget {
-  const HomeContent({super.key});
+class AdminHomeContent extends StatelessWidget {
+  const AdminHomeContent({super.key});
 
   @override
   Widget build(BuildContext context) {

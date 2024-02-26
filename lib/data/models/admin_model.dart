@@ -11,7 +11,7 @@ class AdminModel extends AdminEntity {
     required String surname,
     required String email,
     required String phoneNumber,
-    required Map<String, dynamic> details,
+    required Map<String, dynamic> paymentDetails,
     required Map<String, dynamic> schedule,
   }) : super(
           id: id,
@@ -19,7 +19,7 @@ class AdminModel extends AdminEntity {
           surname: surname,
           email: email,
           phoneNumber: phoneNumber,
-          details: details,
+          paymentDetails: paymentDetails,
           schedule: schedule,
         );
 
@@ -30,7 +30,7 @@ class AdminModel extends AdminEntity {
           surname: '',
           email: '',
           phoneNumber: '',
-          details: {},
+          paymentDetails: {},
           schedule: {},
         );
 

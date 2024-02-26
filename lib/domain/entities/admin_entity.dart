@@ -6,7 +6,7 @@ class AdminEntity extends Equatable {
   final String surname;
   final String phoneNumber;
   final String email;
-  final Map<String, dynamic> details;
+  final Map<String, dynamic> paymentDetails;
   final Map<String, dynamic> schedule;
 
   const AdminEntity({
@@ -15,7 +15,7 @@ class AdminEntity extends Equatable {
     required this.surname,
     required this.phoneNumber,
     required this.email,
-    required this.details,
+    required this.paymentDetails,
     required this.schedule,
   });
 
@@ -27,7 +27,7 @@ class AdminEntity extends Equatable {
       surname,
       phoneNumber,
       email,
-      details,
+      paymentDetails,
       schedule,
     ];
   }

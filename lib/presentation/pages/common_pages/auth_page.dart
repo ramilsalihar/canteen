@@ -1,20 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:canteen/core/routes/app_router.gr.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
-import 'package:canteen/presentation/widgets/user_widgets/login_fields.dart';
-import 'package:canteen/presentation/widgets/user_widgets/signup_fields.dart';
+import 'package:canteen/presentation/widgets/common_widgets/login_fields.dart';
+import 'package:canteen/presentation/widgets/common_widgets/signup_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
-class UserAuthPage extends StatefulWidget {
-  const UserAuthPage({super.key});
+class AuthPage extends StatefulWidget {
+  const AuthPage({super.key});
 
   @override
-  State<UserAuthPage> createState() => _UserAuthPageState();
+  State<AuthPage> createState() => AuthPageState();
 }
 
-class _UserAuthPageState extends State<UserAuthPage> {
+class AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +23,9 @@ class _UserAuthPageState extends State<UserAuthPage> {
         child: Center(
           child: BlocConsumer<AuthBloc, AuthState>(
             listener: (context, state) {
-              print('Listening to state: $state');
-              if (state is AuthUserSuccessState) {
-                context.router.replace(const UserHomeRoute());
-              } else if (state is AuthAdminSuccessState) {
-                context.router.replace(const AdminHomeRoute());
+              if (state is AuthUserSuccessState ||
+                  state is AuthAdminSuccessState) {
+                context.router.replace(const HomeRoute());
               }
             },
             builder: (context, state) {

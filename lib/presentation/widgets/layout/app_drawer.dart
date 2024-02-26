@@ -23,10 +23,6 @@ class _AppDrawerState extends State<AppDrawer> {
             child: DrawerHeader(
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
-                border: Border.all(
-                  color: Colors.white,
-                  width: 2,
-                ),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -93,7 +89,7 @@ class _AppDrawerState extends State<AppDrawer> {
                 BlocProvider.of<AuthBloc>(context).add(
                   LogoutButtonPressed(),
                 );
-                context.replaceRoute(const UserAuthRoute());
+                context.replaceRoute(const AuthRoute());
               },
             ),
           )
