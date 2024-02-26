@@ -1,8 +1,6 @@
 import 'package:canteen/domain/models/product_model.dart';
 
 abstract class AdminRemoteDataSource {
-  Future<void> itemsToCache(List items);
-
   getAllItems() {}
 
   getItemById(int id) {}
@@ -14,11 +12,7 @@ abstract class AdminRemoteDataSource {
 
 class AdminRemoteDataSourceImpl implements AdminRemoteDataSource {
   @override
-  Future<void> itemsToCache(List items) async {}
-
-  @override
   getAllItems() {
-    // TODO: implement getAllItems
     throw UnimplementedError();
   }
 
