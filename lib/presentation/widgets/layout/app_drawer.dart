@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:canteen/core/extensions/context_extension.dart';
 import 'package:canteen/core/routes/app_router.gr.dart';
-import 'package:canteen/data/models/user_model.dart';
 import 'package:canteen/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:canteen/presentation/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
@@ -21,21 +20,11 @@ class _AppDrawerState extends State<AppDrawer> {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
-        user = UserModel(
-          id: 'id',
-          name: 'Ramil',
-          surname: 'Salihar',
-          email: 'ramil.salihar_ucentralasia.org',
-          userType: 'userType',
-          phoneNumber: 'phoneNumber',
-          balance: 0,
-          purchases: [],
-        );
-        // if (state is AuthUserSuccessState) {
-        //   user = state.user;
-        // } else if (state is AuthAdminSuccessState) {
-        //   user = state.user;
-        // }
+        if (state is AuthUserSuccessState) {
+          user = state.user;
+        } else if (state is AuthAdminSuccessState) {
+          user = state.user;
+        }
         return Drawer(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(

@@ -1,4 +1,4 @@
-import 'package:canteen/domain/models/product_model.dart';
+import 'package:canteen/data/models/product_model.dart';
 
 class ProductBillModel {
   String id;

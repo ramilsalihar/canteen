@@ -41,7 +41,7 @@ class BillCard extends StatelessWidget {
                 ...productBill.products.map((product) {
                   return TableRow(
                     children: [
-                      Text(product.name),
+                      Text(product.nameOfProduct),
                       Text(product.quantity.toString()),
                       Text(product.price.toString()),
                     ],
