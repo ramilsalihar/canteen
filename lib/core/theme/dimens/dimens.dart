@@ -3,7 +3,7 @@ class Dimens {
 
   final double textDisplayMedium = 18;
 
-  final double textDisplaySmall = 10;
+  final double textDisplaySmall = 14;
 
   final double headlineLarge = 20;
 

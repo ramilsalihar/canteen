@@ -1,5 +1,4 @@
 import 'package:auto_route/annotations.dart';
-import 'package:canteen/domain/models/user_model.dart';
 import 'package:canteen/presentation/widgets/cards/bill_card.dart';
 import 'package:canteen/presentation/widgets/user_widgets/balance_card.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,7 @@ class ProfilePage extends StatelessWidget {
     required this.user,
   });
 
-  final UserModel user;
+  final dynamic user;
 
   @override
   Widget build(BuildContext context) {
