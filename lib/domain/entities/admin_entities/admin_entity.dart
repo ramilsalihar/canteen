@@ -1,3 +1,5 @@
+import 'package:canteen/domain/entities/admin_entities/payment_details_entity.dart';
+import 'package:canteen/domain/entities/admin_entities/schedule_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class AdminEntity extends Equatable {
@@ -6,8 +8,8 @@ class AdminEntity extends Equatable {
   final String surname;
   final String phoneNumber;
   final String email;
-  final Map<String, dynamic> paymentDetails;
-  final Map<String, dynamic> schedule;
+  final List<PaymentDetailsEntity> paymentDetails;
+  final ScheduleEntity schedule;
 
   const AdminEntity({
     required this.id,

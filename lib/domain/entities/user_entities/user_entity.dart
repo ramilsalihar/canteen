@@ -1,3 +1,4 @@
+import 'package:canteen/domain/entities/product_entities/product_bill_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class UserEntity extends Equatable {
@@ -8,7 +9,7 @@ class UserEntity extends Equatable {
   final String userType;
   final String phoneNumber;
   final double balance;
-  final List<dynamic> purchases;
+  final List<ProductBillEntity> purchases;
 
   const UserEntity({
     required this.id,

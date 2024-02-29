@@ -1,4 +1,4 @@
-import 'package:canteen/domain/entities/product_entity.dart';
+import 'package:canteen/domain/entities/product_entities/product_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class GetItemsState extends Equatable {

@@ -1,9 +1,9 @@
-import 'package:canteen/domain/entities/user_entity.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:canteen/data/models/product_bill_model.dart';
+import 'package:canteen/domain/entities/user_entities/user_entity.dart';
 
-part 'user_model.g.dart';
+// part 'user_model.g.dart';
 
-@JsonSerializable()
+// @JsonSerializable(explicitToJson: true)
 class UserModel extends UserEntity {
   const UserModel({
     required String id,
@@ -13,7 +13,7 @@ class UserModel extends UserEntity {
     required String userType,
     required String phoneNumber,
     required double balance,
-    required List<dynamic> purchases,
+    required List<ProductBillModel> purchases,
   }) : super(
           id: id,
           name: name,
@@ -37,8 +37,31 @@ class UserModel extends UserEntity {
           purchases: [],
         );
 
-  factory UserModel.fromJson(Map<String, Object?> json) =>
-      _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, Object?> json) {
+    return UserModel(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      surname: json['surname'] as String,
+      email: json['email'] as String,
+      userType: json['userType'] as String,
+      phoneNumber: json['phoneNumber'] as String,
+      balance: (json['balance'] as num).toDouble(),
+      purchases: (json['purchases'] as List)
+          .map((e) => ProductBillModel.fromJson(e as Map<String, Object?>))
+          .toList(),
+    );
+  }
 
-  Map<String, Object?> toJson() => _$UserModelToJson(this);
+  Map<String, Object?> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'surname': surname,
+      'email': email,
+      'userType': userType,
+      'phoneNumber': phoneNumber,
+      'balance': balance,
+      'purchases': purchases.map((e) => e).toList(),
+    };
+  }
 }
